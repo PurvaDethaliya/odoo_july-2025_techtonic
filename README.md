@@ -1,0 +1,1 @@
+# odoo_july-2025_techtonic
