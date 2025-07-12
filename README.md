@@ -6,6 +6,8 @@ E-mail : purvadethaliya@gmail.com
 Team member : Urvi Vansh
 E-mail : urbivansh90@gmail.com
 
+Video Link: https://drive.google.com/file/d/1CpdOt-4W03_M7xmplG3hOjntQpPT0Wey/view?usp=sharing 
+
 PROBLEM STATEMENT :
 
 ReWear – Community Clothing Exchange
