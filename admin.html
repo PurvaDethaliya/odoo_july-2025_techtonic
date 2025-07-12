@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReWear Admin Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #34495e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-actions button {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .approve {
+      background-color: #2ecc71;
+      color: white;
+    }
+
+    .reject {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .remove {
+      background-color: #e67e22;
+      color: white;
+    }
+
+    footer {
+      background-color: #34495e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ReWear Admin Panel</h1>
+    <p>Manage Listings & Moderation</p>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <a href="add-item.html">Add Item</a>
+      <a href="item-detail.html">Item Detail</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Pending Item Listings</h2>
+
+    <div class="item" id="item1">
+      <div class="item-info">
+        <strong>Item:</strong> Blue Denim Jacket<br>
+        <strong>Uploader:</strong> user123<br>
+        <strong>Status:</strong> Pending
+      </div>
+      <div class="item-actions">
+        <button class="approve" onclick="approveItem('item1')">Approve</button>
+        <button class="reject" onclick="rejectItem('item1')">Reject</button>
+      </div>
+    </div>
+
+    <div class="item" id="item2">
+      <div class="item-info">
+        <strong>Item:</strong> Black Hoodie<br>
+        <strong>Uploader:</strong> fashionista88<br>
+        <strong>Status:</strong> Pending
+      </div>
+      <div class="item-actions">
+        <button class="approve" onclick="approveItem('item2')">Approve</button>
+        <button class="reject" onclick="rejectItem('item2')">Reject</button>
+      </div>
+    </div>
+
+    <h2>Reported or Inappropriate Items</h2>
+
+    <div class="item" id="item3">
+      <div class="item-info">
+        <strong>Item:</strong> Suspicious Listing<br>
+        <strong>Uploader:</strong> unknownUser<br>
+        <strong>Reported Reason:</strong> Spam
+      </div>
+      <div class="item-actions">
+        <button class="remove" onclick="removeItem('item3')">Remove</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 ReWear | Admin Panel
+  </footer>
+
+  <script>
+    function approveItem(id) {
+      const item = document.getElementById(id);
+      item.querySelector('.item-info').innerHTML += "<br><strong>Status:</strong> Approved";
+      item.querySelector('.item-actions').innerHTML = "<span style='color:green;font-weight:600;'>Approved</span>";
+    }
+
+    function rejectItem(id) {
+      const item = document.getElementById(id);
+      item.querySelector('.item-info').innerHTML += "<br><strong>Status:</strong> Rejected";
+      item.querySelector('.item-actions').innerHTML = "<span style='color:red;font-weight:600;'>Rejected</span>";
+    }
+
+    function removeItem(id) {
+      const item = document.getElementById(id);
+      item.remove();
+      alert("Item removed successfully.");
+    }
+  </script>
+
+</body>
+</html>
